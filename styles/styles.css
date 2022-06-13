@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    height: 1000px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+}
+
+.nav-links li a[aria-current="page"] {
+    background: linear-gradient(to bottom right, rgb(154, 186, 254), rgb(150, 199, 252));
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+.nav-links li a[aria-current="page"]:hover::before {
+    display: none;
+}
+
+
+.facebook-icon-gradient {
+    background: -webkit-linear-gradient(#0165E1, #17A9FD);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #4e6e8d38;
+}
+
+.instagram-icon-gradient {
+    background: -webkit-linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #4e6e8d38;
+}
+
+.twitter-icon-gradient {
+    background: #1D9BF0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #4e6e8d38;
+}
+
+
+#navbar {
+    box-shadow: 2px 2px 8px -6px #101a67;
+}
+
+#mobileMenuTrigger {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#mobileMenuTrigger div {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+.nav-logo-container {
+    /* border: solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.nav-links {
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Red Hat Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0px 40px;
+}
+
+.nav-links li {
+    border-bottom: 1px solid rgba(73, 80, 160, 0.123);
+    padding: 10px 0px 40px;
+}
+
+.nav-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.8rem;
+    padding-bottom: 35px;
+}
+
+.nav-links-container {
+    /* border: solid; */
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.active {
+    max-height: 2000px;
+}
+
+.active .line1 {
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.active .line2 {
+    opacity: 0;
+}
+
+.active .line3 {
+    transform: rotate(45deg) translate(-5.2px, -4px);
+}
+
+
+@media screen and (min-width: 768px) {
+    .nav-logo-container {
+        justify-content: center;
+        padding: 25px 0 0;
+    }
+
+    #mobileMenuTrigger {
+        display: none;
+    }
+
+    .nav-links-container {
+        max-height: none;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: center;
+        margin: 18px 0 20px;
+    }
+
+    .nav-links li {
+        border: none;
+        padding: 0;
+    }
+
+    .nav-socials {
+        padding-bottom: 25px;
+    }
+}
+
+
+
+@media screen and (min-width: 1025px) {
+    #navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        max-width: 1800px;
+        margin: auto;
+    }
+
+    .nav-logo-container {
+        padding: 0px;
+    }
+
+    .nav-links-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .nav-links {
+        /* border: solid; */
+        align-items: center;
+        flex: 1;
+    }
+
+    .nav-socials {
+        /* border: solid; */
+        align-items: center;
+        padding-bottom: 0px;
+    }
+
+    .nav-links-container .nav-socials a {
+        position: relative;
+    }
+
+    .nav-links-container .nav-socials a::before {
+        content: '';
+        height: 15px;
+        background-color: rgba(177, 177, 177, 0.47);
+        position: absolute;
+        bottom: -13px;
+        left: 0px;
+        right: 0px;
+        filter: blur(10px);
+        transform: rotateX(90deg);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links-container .nav-socials a:hover::before {
+        transform: rotateX(85deg);
+    }
+
+    .nav-links li a {
+        position: relative;
+    }
+
+    .nav-links li a::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0px;
+        height: 2px;
+        width: 0px;
+        background: #000;
+        transition: width 0.5s ease;
+    }
+
+    .nav-links li a:hover::before {
+        width: 30px;
+    }
+}
